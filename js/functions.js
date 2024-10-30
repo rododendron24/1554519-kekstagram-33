@@ -1,12 +1,22 @@
+function checkLine(phrase, maxLength) {
+  if (phrase.length <= maxLength) {
+    return 'длина верная';
+  }
+  return 'длина неверная';
+}
+
+console.log(checkLine('Зонтик', 5)); // false
+console.log(checkLine('Какие-то буквы', 14));
+
+
 function checkStringLength(str, maxLength) {
   return str.length <= maxLength;
 }
 
 // Пример использования:
-/* eslint-disable no-alert, no-console */
 console.log(checkStringLength('Паровозик', 5)); // false
 console.log(checkStringLength('Какие-то буквы', 14)); // true
-/* eslint-enable no-alert */
+
 
 function isPalindrome(str) {
   // Приведение строки к нижнему регистру и удаление всех не буквенно-цифровых символов
@@ -34,3 +44,55 @@ function checkTextLength(str, minLength, maxLength) {
 // Пример использования:
 const result = checkTextLength('Пример строки', 5, 20);
 console.log(result);
+
+
+const checkPalindrome = (letters) => {
+  const lettersReady = letters.replaceAll(' ', '').toLowerCase();
+  let lettersReverse = '';
+  for (let i = lettersReverse.length - 1; i >= 0; i--) {
+    lettersReverse += lettersReady[i];
+  }
+  return (lettersReverse === lettersReady);
+};
+console.log(checkPalindrome('Лёша на полке клопа нашёл ')); //true
+console.log(checkPalindrome('Привет')); //false
+
+
+
+
+const isitPalindrome = (input) => {
+  const noSpacedAndReversedInput = input.replaceAll(' ', '').toLowerCase().split('').reverse().join('');
+  const cleanedInput = input.replaceAll(' ', '').toLowerCase();
+  return cleanedInput === noSpacedAndReversedInput;
+};
+
+console.log('Проверяем функцию isPalindrome:');
+console.log('Тест №1. Ожидаю true, получаю - ', isitPalindrome('ДовОд'));
+console.log('Тест №2. Ожидаю true, получаю - ', isitPalindrome('Лёша на полке клопа нашёл '));
+console.log('Тест №3. Ожидаю false, получаю - ', isitPalindrome('  Привет пока  '));
+
+//Функция принимает строку, извлекает содержащиеся в ней цифры от 0 до 9 и возвращает их в виде целого положительного числа.
+const getNumbersFromString = (input) => {
+  if (typeof input !== 'string' && typeof input !== 'number') {
+    return NaN;
+  }
+
+  const inputString = input.toString();
+
+  let result = '';
+  for (let i = 0; i < inputString.length; i++) {
+    const char = inputString[i];
+    if (!isNaN(parseInt(char, 10))) {
+      result += char;
+    }
+  }
+
+  return result ? parseInt(result, 10) : NaN;
+};
+
+//Проверка функций и вывод рузультата функций в консоль браузера
+
+
+console.log('Проверяем функцию checkStringLengt:');
+console.log('Тест №1. Ожидаю true, получаю - ', checkStringLength('проверяемая строка', 20));
+console.log('Тест №2. Ожидаю false, получаю - ', checkStringLength('проверяемая строка', 2));
