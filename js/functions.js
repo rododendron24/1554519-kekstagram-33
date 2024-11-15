@@ -96,3 +96,28 @@ const getNumbersFromString = (input) => {
 console.log('Проверяем функцию checkStringLengt:');
 console.log('Тест №1. Ожидаю true, получаю - ', checkStringLength('проверяемая строка', 20));
 console.log('Тест №2. Ожидаю false, получаю - ', checkStringLength('проверяемая строка', 2));
+
+
+//Функция проверки времени встреч
+function isMeetingInWorkingHours(startWorkDay, endWorkDay, meetingStart, meetingDuration) {
+  // Функция для преобразования времени в минуты
+  const timeToMinutes = (time) => {
+    const [hours, minutes] = time.split(':').map(Number);
+    return hours * 60 + minutes;
+  };
+
+  // Преобразуем входные данные в минуты
+  const startDay = timeToMinutes(startWorkDay);
+  const endDay = timeToMinutes(endWorkDay);
+  const meetingStartTime = timeToMinutes(meetingStart);
+  const meetingEndTime = meetingStartTime + meetingDuration;
+
+  // Проверяем, укладывается ли встреча в рабочий день
+  return meetingStartTime >= startDay && meetingEndTime <= endDay;
+}
+
+// Пример использования:
+console.log(isMeetingInWorkingHours("8:00", "17:00", "9:00", 60000)); // true
+console.log(isMeetingInWorkingHours("8:0", "17:00", "16:30", 60)); // false
+console.log(isMeetingInWorkingHours("9:00", "18:5", "8:00", 30)); // false
+console.log(isMeetingInWorkingHours("9:00", "18:00", "9:30", 60)); // true
