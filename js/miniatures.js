@@ -4,27 +4,10 @@ const randomUserPictureTemplate = document.querySelector('#picture').content.que
 const createPictures = (({url, description, likes, comments}) => {
   const pictureElement = randomUserPictureTemplate.cloneNode(true);
 
-  // Добавить изображение
-  //const pictureElement = document.querySelector('picture__img');
-  //pictureElement.src = url;
-  //pictureElement.alt = description;
   pictureElement.querySelector('.picture__img').src = url;
   pictureElement.querySelector('.picture__img').alt = description;
-  //const imgElement = pictureElement.querySelector('.picture__img');
-  //imgElement.src = url;
-  //imgElement.alt = description;
   pictureElement.querySelector('.picture__likes').textContent = likes;
   pictureElement.querySelector('.picture__comments').textContent = comments.length;
-
-  //const commentsElement = pictureElement.querySelector('.picture__comments');
-  //commentsElement.textContent = comments.length;
-  //PartOfPicture.querySelector('.picture__comments').textContent = comments.length;
-  // Блок с количеством лайков
-
-  //PartOfPicture.querySelector('.picture__img').src = url;
-  //PartOfPicture.querySelector('.picture__img').alt = description;
-  //PartOfPicture.querySelector('.picture__likes').textContent = likes;
-  //PartOfPicture.querySelector('.picture__comments').textContent = comments.length;
 
   return pictureElement;
 });
@@ -37,18 +20,9 @@ const makePicturesShow = (pictures) => {
     randomUsersPicturesFragment.append(createPictureElement);
   });
 
-
   randomUsersPictures.append(randomUsersPicturesFragment);
 };
 export {makePicturesShow};
-
-/*
-const url = randomUsersPictures.querySelector('.picture__img');
-picture.src = 'images/picture.jpg'
-const makePicture = function (url, description, likes, comments) {
-  const RandomPictures = randomUserPictureTemplate.cloneNode(true);
-  return makePicture;
-};
 
 
 /*
@@ -62,6 +36,6 @@ const makePicture = function (url, description, likes, comments) {
 </a>
 </template>
 
-   <section class="pictures  container">
+  <section class="pictures  container">
       <h2 class="pictures__title  visually-hidden">Фотографии других пользователей</h2>
 */

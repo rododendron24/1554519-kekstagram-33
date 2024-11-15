@@ -5,3 +5,4 @@ import {makePicturesShow} from './miniatures.js';
 makePicturesShow(
   getPhotos()
 );
+
