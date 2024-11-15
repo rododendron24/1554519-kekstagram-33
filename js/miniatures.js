@@ -13,7 +13,7 @@ const createPictures = (({url, description, likes, comments}) => {
   pictureElement.querySelector('.picture__img').alt = description;
   pictureElement.querySelector('.picture__comments').textContent = comments.length;
   //PartOfPicture.querySelector('.picture__comments').textContent = comments.length;
-// Блок с количеством лайков
+  // Блок с количеством лайков
 
   //PartOfPicture.querySelector('.picture__img').src = url;
   //PartOfPicture.querySelector('.picture__img').alt = description;
