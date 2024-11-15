@@ -116,8 +116,7 @@ const generatePhotoDescription = () => ({
 });
 
 // Генерация массива из 25 объектов
-const photos = Array.from({ length: photosData }, (_, index) => generatePhotoDescription(index + 1));
 
-const createPhotos = () => Array.from({length: photosData}, photos);
+const getPhotos = () => (Array.from({length: photosData}, generatePhotoDescription));
 
-export {createPhotos};
+export {getPhotos};

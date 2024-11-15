@@ -1,6 +1,7 @@
 import './util.js';
-import {createPhotos} from './data.js';
+import {getPhotos} from './data.js';
+import {makePicturesShow} from './miniatures.js';
 
-console.log(
-  createPhotos()
+makePicturesShow(
+  getPhotos()
 );
