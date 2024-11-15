@@ -112,7 +112,7 @@ const generatePhotoDescription = () => ({
   url: `photos/${getRandomInt(1, 25).toString()}.jpg`,
   description: getRandomArrayElement(description),
   likes: getRandomInt(15, 200),
-  comments: generateComment()
+  comments: generateComment(),
 });
 
 // Генерация массива из 25 объектов

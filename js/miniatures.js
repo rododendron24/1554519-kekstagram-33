@@ -8,10 +8,16 @@ const createPictures = (({url, description, likes, comments}) => {
   //const pictureElement = document.querySelector('picture__img');
   //pictureElement.src = url;
   //pictureElement.alt = description;
-  pictureElement.querySelector('.picture__likes').textContent = likes;
   pictureElement.querySelector('.picture__img').src = url;
   pictureElement.querySelector('.picture__img').alt = description;
+  //const imgElement = pictureElement.querySelector('.picture__img');
+  //imgElement.src = url;
+  //imgElement.alt = description;
+  pictureElement.querySelector('.picture__likes').textContent = likes;
   pictureElement.querySelector('.picture__comments').textContent = comments.length;
+
+  //const commentsElement = pictureElement.querySelector('.picture__comments');
+  //commentsElement.textContent = comments.length;
   //PartOfPicture.querySelector('.picture__comments').textContent = comments.length;
   // Блок с количеством лайков
 
